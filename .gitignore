@@ -1,0 +1,9 @@
+# Database files
+database.sqlite
+
+# Upload directories
+**/uploads/
+**/uploads_secure/*
+
+# Keep .htaccess files but ignore uploaded content
+!**/uploads_secure/.htaccess
