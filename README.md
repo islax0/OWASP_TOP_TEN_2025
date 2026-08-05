@@ -4,12 +4,12 @@ Hands-on labs covering the most common Broken Access Control scenarios.
 
 ## Setup
 
-1. Place this folder under your web root (e.g. `htdocs/broken-access-control-labs` or `/var/www/html/...`).
+1. Place this folder under your web root (e.g. `htdocs` or `/var/www/html/`).
 2. Ensure PHP has the **SQLite** extension (`pdo_sqlite`).
 3. Visit once:  
-   `http://localhost/broken-access-control-labs/init.php`  
+   `http://localhost/init.php`  
    This creates `database.sqlite` and seeds users + orders.
-4. Login: `http://localhost/broken-access-control-labs/login.php`
+4. Login: `http://localhost/login.php`
 
 ### Demo accounts
 
@@ -19,7 +19,7 @@ Hands-on labs covering the most common Broken Access Control scenarios.
 | user1    | 123456   | user  | 1500    |
 | user2  | 123456   | user  | 800     |
 
-If the app is not at `/broken-access-control-labs`, edit `BASE_URL` in `config.php`.
+If the app is not at the web root, edit `BASE_URL` in `config.php`.
 
 ---
 
@@ -97,7 +97,7 @@ UPDATE users SET role = ? WHERE id = ?
 
 **Attack page:**
 ```html
-<form action="http://localhost/broken-access-control-labs/lab4-csrf/transfer_action.php" method="POST">
+<form action="http://localhost/lab4-csrf/transfer_action.php" method="POST">
   <input name="to" value="2">
   <input name="amount" value="100">
 </form>
