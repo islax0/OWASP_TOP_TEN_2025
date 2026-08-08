@@ -95,8 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $targetId === (int)$user['id']) {
         <span>Lab 3 — Privilege Escalation</span>
         <div>
             <a href="users.php">Users list</a>
-            <a href="../../dashboard.php">Dashboard</a>
-            <a href="../../logout.php">Logout</a>
+            <a href="/dashboard.php">Dashboard</a>
+            <a href="/logout.php">Logout</a>
         </div>
     </nav>
     <div class="container">

@@ -48,8 +48,8 @@ unset($_SESSION['flash']);
     <nav>
         <span>Lab 4 — CSRF</span>
         <div>
-            <a href="../../dashboard.php">Dashboard</a>
-            <a href="../../logout.php">Logout</a>
+            <a href="/dashboard.php">Dashboard</a>
+            <a href="/logout.php">Logout</a>
         </div>
     </nav>
     <div class="container">

@@ -46,7 +46,7 @@ $balance = $stmt->fetchColumn();
             <span><?= htmlspecialchars($user['username']) ?>
                 <span class="badge <?= $user['role'] === 'admin' ? 'badge-admin' : 'badge-user' ?>"><?= htmlspecialchars($user['role']) ?></span>
             </span>
-            <a href="logout.php">Logout</a>
+            <a href="/logout.php">Logout</a>
         </div>
     </nav>
 
@@ -58,43 +58,50 @@ $balance = $stmt->fetchColumn();
             <div class="card">
                 <h2>Lab 1 — IDOR</h2>
                 <p>Insecure Direct Object Reference. View orders by ID without ownership check.</p>
-                <a href="A012025 Broken Access Control/lab1-idor/orders.php">Open Lab 1</a>
+                <a href="A012025-Broken-Access-Control/lab1-idor/orders.php">Open Lab 1</a>
                 <p class="vuln">Vulnerable: order.php?id=N</p>
             </div>
 
             <div class="card">
                 <h2>Lab 2 — Missing Authorization</h2>
                 <p>Admin panel reachable by any authenticated user. Forced browsing + missing role check.</p>
-                <a href="A012025 Broken Access Control/lab2-missing-auth/admin.php">Open Lab 2</a>
+                <a href="A012025-Broken-Access-Control/lab2-missing-auth/admin.php">Open Lab 2</a>
                 <p class="vuln">Vulnerable: /admin.php &amp; delete_user.php</p>
             </div>
 
             <div class="card">
                 <h2>Lab 3 — Privilege Escalation</h2>
                 <p>Parameter tampering (role), horizontal IDOR on profiles, vertical access to user list.</p>
-                <a href="A012025 Broken Access Control/lab3-privilege/profile.php">Open Lab 3</a>
+                <a href="A012025-Broken-Access-Control/lab3-privilege/profile.php">Open Lab 3</a>
                 <p class="vuln">Vulnerable: role=admin, profile?id=, /users.php</p>
             </div>
 
             <div class="card">
                 <h2>Lab 4 — CSRF</h2>
                 <p>Money transfer without CSRF token. Cookie-based auth only.</p>
-                <a href="A012025 Broken Access Control/lab4-csrf/transfer.php">Open Lab 4</a>
+                <a href="A012025-Broken-Access-Control/lab4-csrf/transfer.php">Open Lab 4</a>
                 <p class="vuln">Vulnerable: transfer_action.php</p>
             </div>
 
             <div class="card">
                 <h2>Bonus — CORS Misconfiguration</h2>
                 <p>API reflects any Origin with credentials. Cross-origin data theft.</p>
-                <a href="A012025 Broken Access Control/api/user.php">View API</a>
+                <a href="A012025-Broken-Access-Control/api/user.php">View API</a>
                 <p class="vuln">Vulnerable: Access-Control-Allow-Origin reflects Origin</p>
             </div>
 
             <div class="card">
                 <h2>Lab 5 — Force Browsing</h2>
                 <p>Uploaded files accessible without authentication. Direct URL access to private files.</p>
-                <a href="A012025 Broken Access Control/lab5-force-browsing/upload.php">Open Lab 5</a>
+                <a href="A012025-Broken-Access-Control/lab5-force-browsing/upload.php">Open Lab 5</a>
                 <p class="vuln">Vulnerable: /uploads/&lt;filename&gt; direct access</p>
+            </div>
+
+            <div class="card">
+                <h2>Lab 6 — JWT Signature Bypass</h2>
+                <p>JWT tokens without signature verification. Tamper with tokens to escalate privileges.</p>
+                <a href="A012025-Broken-Access-Control/lab6-jwt/login_vulnerable.php">Open Lab 6</a>
+                <p class="vuln">Vulnerable: No signature verification on JWT decode</p>
             </div>
         </div>
     </div>

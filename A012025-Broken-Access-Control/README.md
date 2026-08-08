@@ -4,7 +4,7 @@ Hands-on labs covering the most common Broken Access Control scenarios from OWAS
 
 ## Overview
 
-Broken Access Control is the #1 vulnerability in OWASP Top Ten 2025. These labs demonstrate various access control vulnerabilities including IDOR, missing authorization, privilege escalation, CSRF, and force browsing.
+Broken Access Control is the #1 vulnerability in OWASP Top Ten 2025. These labs demonstrate various access control vulnerabilities including IDOR, missing authorization, privilege escalation, CSRF, force browsing, and JWT signature verification bypass.
 
 ## Labs
 
@@ -13,6 +13,7 @@ Broken Access Control is the #1 vulnerability in OWASP Top Ten 2025. These labs 
 - [Lab 3 — Privilege Escalation](lab3-privilege/README.md) - Horizontal & Vertical
 - [Lab 4 — CSRF](lab4-csrf/README.md) - Cross-Site Request Forgery
 - [Lab 5 — Force Browsing](lab5-force-browsing/README.md) - Uploaded Files
+- [Lab 6 — JWT](lab6-jwt/README.md) - Signature Verification Bypass
 - [Bonus — CORS](api/README.md) - Misconfiguration
 
 ## Setup

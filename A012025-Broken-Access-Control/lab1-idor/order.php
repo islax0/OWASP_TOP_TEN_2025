@@ -70,7 +70,7 @@ $owner = $stmt->fetchColumn() ?: 'unknown';
         <span>Lab 1 — IDOR</span>
         <div>
             <a href="orders.php">My Orders</a>
-            <a href="../../dashboard.php">Dashboard</a>
+            <a href="/dashboard.php">Dashboard</a>
         </div>
     </nav>
     <div class="container">

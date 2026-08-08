@@ -48,5 +48,5 @@ $pdo->prepare("DELETE FROM orders WHERE user_id = ?")->execute([$id]);
 $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
 $stmt->execute([$id]);
 
-header('Location: http://localhost/A012025%20Broken%20Access%20Control/lab2-missing-auth/admin.php?deleted=1');
+header('Location: http://localhost/A012025-Broken-Access-Control/lab2-missing-auth/admin.php?deleted=1');
 exit;

@@ -1,11 +1,12 @@
 <?php
 /**
- * LAB 5 — Force Browsing on Uploaded Files (SECURE VERSION)
+ * LAB 5 — Force Browsing on Uploaded Files (Vulnerable)
  *
- * Fixed version with proper access controls:
- * 1. Files are served through a PHP script that checks authentication
- * 2. Users can only access their own uploaded files
- * 3. Uploads directory is protected from direct access
+ * Users can upload files that are stored in a publicly accessible directory.
+ * No access control - anyone can access uploaded files via direct URL.
+ *
+ * Vulnerability: Force browsing allows attackers to access uploaded files
+ * without authentication by guessing the file paths.
  */
 require_once __DIR__ . '/../../auth.php';
 requireLogin();
@@ -13,15 +14,9 @@ requireLogin();
 $user = currentUser();
 
 // Create uploads directory if it doesn't exist
-$uploadDir = __DIR__ . '/uploads_secure';
+$uploadDir = __DIR__ . '/uploads';
 if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0755, true);
-}
-
-// Create .htaccess to prevent direct access
-$htaccess = $uploadDir . '/.htaccess';
-if (!file_exists($htaccess)) {
-    file_put_contents($htaccess, "Deny from all\n");
 }
 
 $message = '';
@@ -36,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
         } elseif ($file['size'] > 2 * 1024 * 1024) {
             $message = 'File too large. Max 2MB.';
         } else {
-            // Generate unique filename with user ID
+            // Generate unique filename to prevent overwrites
             $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
             $filename = uniqid() . '_' . $user['id'] . '.' . $extension;
             $destination = $uploadDir . '/' . $filename;
@@ -52,16 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
     }
 }
 
-// List uploaded files for current user only
+// List uploaded files for current user
 $files = [];
 if (is_dir($uploadDir)) {
-    $allFiles = array_diff(scandir($uploadDir), ['.', '..', '.htaccess']);
-    // Filter to show only current user's files
-    foreach ($allFiles as $file) {
-        if (strpos($file, '_' . $user['id'] . '.') !== false) {
-            $files[] = $file;
-        }
-    }
+    $files = array_diff(scandir($uploadDir), ['.', '..']);
 }
 ?>
 <!DOCTYPE html>
@@ -69,7 +58,7 @@ if (is_dir($uploadDir)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 5 — Force Browsing | File Upload (SECURE)</title>
+    <title>Lab 5 — Force Browsing | File Upload</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: system-ui, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
@@ -78,7 +67,7 @@ if (is_dir($uploadDir)) {
         nav a:hover { color: #f1f5f9; }
         .container { max-width: 800px; margin: 2rem auto; padding: 0 1.5rem; }
         h1 { margin-bottom: .5rem; }
-        .hint { background: #1e293b; border-left: 4px solid #10b981; padding: 1rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; font-size: .9rem; color: #6ee7b7; }
+        .hint { background: #1e293b; border-left: 4px solid #f59e0b; padding: 1rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; font-size: .9rem; color: #fbbf24; }
         .hint code { background: #334155; padding: .2rem .4rem; border-radius: 4px; }
         .upload-form { background: #1e293b; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
         .upload-form input[type="file"] { margin: 1rem 0; }
@@ -98,23 +87,22 @@ if (is_dir($uploadDir)) {
 </head>
 <body>
     <nav>
-        <span>Lab 5 — Force Browsing (SECURE)</span>
+        <span>Lab 5 — Force Browsing</span>
         <div>
-            <a href="../../dashboard.php">Dashboard</a>
-            <a href="../../logout.php">Logout</a>
+            <a href="/dashboard.php">Dashboard</a>
+            <a href="/logout.php">Logout</a>
         </div>
     </nav>
     <div class="container">
-        <a class="back" href="../../dashboard.php">← Dashboard</a>
-        <h1>File Upload (SECURE)</h1>
+        <a class="back" href="/dashboard.php">← Dashboard</a>
+        <h1>File Upload</h1>
         <p style="color:#94a3b8;margin-bottom:1rem;">Logged in as <?= htmlspecialchars($user['username']) ?></p>
 
         <div class="hint">
-            <strong>Security Fixes:</strong><br>
-            1. Files stored in protected directory with <code>.htaccess</code> (Deny from all)<br>
-            2. Files served through authenticated PHP script that checks ownership<br>
-            3. Users can only access their own uploaded files<br>
-            4. Filenames include user ID for ownership tracking
+            <strong>Vulnerability:</strong> Uploaded files are stored in <code>/uploads/</code> without access control.<br><br>
+            <strong>Attack:</strong> Anyone can access uploaded files by guessing or enumerating filenames:<br>
+            <code>/uploads/&lt;filename&gt;</code><br><br>
+            <strong>Example:</strong> After uploading a file, try accessing it directly via URL. Then try to access other users' files by guessing filenames.
         </div>
 
         <?php if ($message): ?>
@@ -132,14 +120,14 @@ if (is_dir($uploadDir)) {
         </div>
 
         <div class="files-list">
-            <h3>My Uploaded Files (<?= count($files) ?>)</h3>
+            <h3>Uploaded Files (<?= count($files) ?> total)</h3>
             <?php if (empty($files)): ?>
                 <p style="color:#94a3b8;">No files uploaded yet.</p>
             <?php else: ?>
                 <?php foreach ($files as $file): ?>
                     <div class="file-item">
                         <code><?= htmlspecialchars($file) ?></code>
-                        <a href="serve_file.php?file=<?= htmlspecialchars($file) ?>" target="_blank">View File</a>
+                        <a href="uploads/<?= htmlspecialchars($file) ?>" target="_blank">View File</a>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>

@@ -26,5 +26,5 @@ if ((int)$id === (int)$user['id']) {
     $_SESSION['role'] = $role;
 }
 
-header('Location: http://localhost/A012025%20Broken%20Access%20Control/lab3-privilege/profile.php?id=' . (int)$id);
+header('Location: http://localhost/A012025-Broken-Access-Control/lab3-privilege/profile.php?id=' . (int)$id);
 exit;

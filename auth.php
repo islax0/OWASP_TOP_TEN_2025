@@ -3,7 +3,7 @@ require_once __DIR__ . '/db.php';
 
 function requireLogin(): void {
     if (!isset($_SESSION['user'])) {
-        header('Location: ' . BASE_URL . '/login.php');
+        header('Location: /login.php');
         exit;
     }
 }
@@ -12,7 +12,7 @@ function requireAdmin(): void {
     requireLogin();
     if (($_SESSION['role'] ?? '') !== 'admin') {
         http_response_code(403);
-        die('<h1>403 Forbidden</h1><p>Admin access required.</p><a href="' . BASE_URL . '/dashboard.php">Back to dashboard</a>');
+        die('<h1>403 Forbidden</h1><p>Admin access required.</p><a href="/dashboard.php">Back to dashboard</a>');
     }
 }
 

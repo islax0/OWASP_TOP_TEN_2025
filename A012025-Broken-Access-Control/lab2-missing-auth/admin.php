@@ -17,7 +17,7 @@ session_start(); // already started in config, but explicit for clarity
 
 // ========== VULNERABLE: only checks login, not role ==========
 if (!isset($_SESSION['user'])) {
-    die('Not authenticated. <a href="../../login.php">Login</a>');
+    die('Not authenticated. <a href="/login.php">Login</a>');
 }
 
 // ========== FIXED (commented) ==========
@@ -58,8 +58,8 @@ $currentRole = $_SESSION['role'] ?? 'user';
     <nav>
         <span>Lab 2 — Missing Authorization</span>
         <div>
-            <a href="../../dashboard.php">Dashboard</a>
-            <a href="../../logout.php">Logout</a>
+            <a href="/dashboard.php">Dashboard</a>
+            <a href="/logout.php">Logout</a>
         </div>
     </nav>
     <div class="container">

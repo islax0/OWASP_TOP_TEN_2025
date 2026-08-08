@@ -30,7 +30,7 @@ $to     = (int)($_POST['to'] ?? 0);
 
 if ($amount <= 0 || $to <= 0 || $to === $userId) {
     $_SESSION['flash'] = ['type' => 'err', 'msg' => 'Invalid transfer parameters'];
-    header('Location: http://localhost/A012025%20Broken%20Access%20Control/lab4-csrf/transfer.php');
+    header('Location: http://localhost/A012025-Broken-Access-Control/lab4-csrf/transfer.php');
     exit;
 }
 
@@ -46,7 +46,7 @@ try {
     if ($balance < $amount) {
         $pdo->rollBack();
         $_SESSION['flash'] = ['type' => 'err', 'msg' => 'Insufficient balance'];
-        header('Location: http://localhost/A012025%20Broken%20Access%20Control/lab4-csrf/transfer.php');
+        header('Location: http://localhost/A012025-Broken-Access-Control/lab4-csrf/transfer.php');
         exit;
     }
 
@@ -71,5 +71,5 @@ try {
     $_SESSION['flash'] = ['type' => 'err', 'msg' => 'Transfer failed'];
 }
 
-header('Location: http://localhost/A012025%20Broken%20Access%20Control/lab4-csrf/transfer.php');
+header('Location: http://localhost/A012025-Broken-Access-Control/lab4-csrf/transfer.php');
 exit;

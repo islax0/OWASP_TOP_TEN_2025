@@ -41,7 +41,7 @@ $current = currentUser();
         <span>Lab 3 — Users list</span>
         <div>
             <a href="profile.php">Profile</a>
-            <a href="../../dashboard.php">Dashboard</a>
+            <a href="/dashboard.php">Dashboard</a>
         </div>
     </nav>
     <div class="container">

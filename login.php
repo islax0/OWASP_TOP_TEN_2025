@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     if (loginUser($username, $password)) {
-        header('Location: dashboard.php');
+        header('Location: /dashboard.php');
         exit;
     }
     $error = 'Invalid username or password';
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Already logged in?
 if (isset($_SESSION['user'])) {
-    header('Location: dashboard.php');
+    header('Location: /dashboard.php');
     exit;
 }
 ?>

@@ -4,7 +4,7 @@ Hands-on labs covering the OWASP Top Ten 2025 security vulnerabilities.
 
 ## Categories
 
-- [A01: Broken Access Control](A012025%20Broken%20Access%20Control/README.md) - Labs for access control vulnerabilities
+- [A01: Broken Access Control](A012025-Broken-Access-Control/README.md) - Labs for access control vulnerabilities
 
 ## Setup
 

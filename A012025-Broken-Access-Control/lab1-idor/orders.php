@@ -37,12 +37,12 @@ $orders = $stmt->fetchAll();
     <nav>
         <span>Lab 1 — IDOR</span>
         <div>
-            <a href="../../dashboard.php">Dashboard</a>
-            <a href="../../logout.php">Logout</a>
+            <a href="/dashboard.php">Dashboard</a>
+            <a href="/logout.php">Logout</a>
         </div>
     </nav>
     <div class="container">
-        <a class="back" href="../../dashboard.php">← Dashboard</a>
+        <a class="back" href="/dashboard.php">← Dashboard</a>
         <h1>My Orders</h1>
         <p style="color:#94a3b8;margin-bottom:1rem;">Logged in as <?= htmlspecialchars($user['username']) ?> (user_id=<?= $user['id'] ?>)</p>
 
