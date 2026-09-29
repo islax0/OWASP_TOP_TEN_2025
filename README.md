@@ -5,6 +5,7 @@ Hands-on labs covering the OWASP Top Ten 2025 security vulnerabilities.
 ## Categories
 
 - [A01: Broken Access Control](A012025-Broken-Access-Control/README.md) - Labs for access control vulnerabilities
+- [A02: Security Misconfiguration](A022025-Security-Misconfiguration/README.md) - Labs for misconfiguration vulnerabilities
 
 ## Setup
 

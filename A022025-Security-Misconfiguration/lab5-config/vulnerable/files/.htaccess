@@ -1,0 +1,3 @@
+# Directory listing intentionally ON for the lab (CWE-16).
+# FIXED version uses: Options -Indexes
+Options +Indexes

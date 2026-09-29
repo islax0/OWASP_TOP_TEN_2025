@@ -14,7 +14,6 @@ Broken Access Control is the #1 vulnerability in OWASP Top Ten 2025. These labs 
 - [Lab 4 — CSRF](lab4-csrf/README.md) - Cross-Site Request Forgery
 - [Lab 5 — Force Browsing](lab5-force-browsing/README.md) - Uploaded Files
 - [Lab 6 — JWT](lab6-jwt/README.md) - Signature Verification Bypass
-- [Bonus — CORS](api/README.md) - Misconfiguration
 
 ## Setup
 

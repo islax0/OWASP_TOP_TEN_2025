@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /A022025-Security-Misconfiguration/lab1-secrets/vulnerable/status.php
+Disallow: /A022025-Security-Misconfiguration/lab1-secrets/vulnerable/config.php.bak
+Disallow: /A022025-Security-Misconfiguration/lab1-secrets/vulnerable/.env

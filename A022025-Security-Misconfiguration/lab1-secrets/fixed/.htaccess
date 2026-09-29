@@ -1,0 +1,7 @@
+# SECURE: block sensitive files even if accidentally left in webroot
+<FilesMatch "(\.env|config\.php.*\.bak|.*\.bak|\.git.*)$">
+  Require all denied
+</FilesMatch>
+
+# Never serve .env as plain text
+RedirectMatch 404 /\.env$

@@ -4,9 +4,9 @@
 
 ## Files
 
-- Vulnerable: `/lab5-force-browsing/upload.php`
-- Secure: `/lab5-force-browsing/upload_secure.php`
-- File serving: `/lab5-force-browsing/serve_file.php`
+- Vulnerable: `/lab5-force-browsing/vulnerable/upload.php`
+- Secure: `/lab5-force-browsing/fixed/upload_secure.php`
+- File serving: `/lab5-force-browsing/fixed/serve_file.php`
 
 ## Attack
 

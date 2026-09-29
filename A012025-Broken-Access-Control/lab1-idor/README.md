@@ -4,8 +4,9 @@
 
 ## Files
 
-- List (safe): `/lab1-idor/orders.php`
-- Detail (vulnerable): `/lab1-idor/order.php?id=1`
+- List: `/lab1-idor/vulnerable/orders.php` (same in `fixed/`)
+- Detail (vulnerable): `/lab1-idor/vulnerable/order.php?id=1`
+- Detail (secure): `/lab1-idor/fixed/order_secure.php?id=1`
 
 ## Vulnerable Code
 

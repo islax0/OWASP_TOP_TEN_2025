@@ -4,9 +4,9 @@
 
 ## Files
 
-- Vulnerable: `/lab6-jwt/login_vulnerable.php` — JWT without signature verification
-- Secure: `/lab6-jwt/login_secure.php` — JWT with proper signature verification
-- Admin page: `/lab6-jwt/admin.php` — Protected resource
+- Vulnerable: `/lab6-jwt/vulnerable/login_vulnerable.php` — JWT without signature verification
+- Secure: `/lab6-jwt/fixed/login_secure.php` — JWT with proper signature verification
+- Admin page: `/lab6-jwt/vulnerable/admin.php` — Protected resource (`fixed/admin_secure.php`)
 
 ## Vulnerability
 
@@ -20,13 +20,13 @@ JWT (JSON Web Tokens) consist of three parts: header, payload, and signature. Th
 
 ### Using the Vulnerable Implementation
 
-1. Login via `/lab6-jwt/login_vulnerable.php` with any credentials
+1. Login via `/lab6-jwt/vulnerable/login_vulnerable.php` with any credentials
 2. Receive a JWT token in the response
 3. Decode the JWT (base64url decode the payload)
 4. Modify the payload to change `"role": "user"` to `"role": "admin"`
 5. Re-encode the payload (base64url encode)
 6. Reconstruct the JWT with the modified payload
-7. Access `/lab6-jwt/admin.php` with the tampered token
+7. Access `/lab6-jwt/vulnerable/admin.php` with the tampered token
 8. Gain admin access without proper authentication
 
 ### Example JWT Manipulation

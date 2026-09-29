@@ -1,0 +1,3 @@
+# SECURE: no directory listing. Sensitive files must also live
+# OUTSIDE the webroot (note: no backup.sql ships in fixed/files/).
+Options -Indexes

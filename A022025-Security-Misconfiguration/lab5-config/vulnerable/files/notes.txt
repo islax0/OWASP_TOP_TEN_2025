@@ -1,0 +1,4 @@
+wifi_ssid=AcmeGuest
+wifi_key=GuestWifi2024!
+printer_ip=192.168.1.50
+(nothing sensitive — the sensitive file is backup.sql next to this one)

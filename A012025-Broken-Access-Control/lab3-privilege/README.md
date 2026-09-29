@@ -4,7 +4,8 @@
 
 **Goal:** Change your role to admin by modifying the form data.
 
-- `/lab3-privilege/profile.php`
+- Vulnerable: `/lab3-privilege/vulnerable/profile.php`
+- Secure: `/lab3-privilege/fixed/profile_secure.php`
 
 ### Vulnerable Code
 
@@ -28,12 +29,12 @@ Never accept `role` from the client (`unset($_POST['role'])` or hardcode the rol
 
 **Goal:** View another user's profile.
 
-- `/lab3-privilege/profile.php?id=2`
+- `/lab3-privilege/vulnerable/profile.php?id=2`
 
 ### Attack
 
 1. Login as `user1`
-2. Access `/lab3-privilege/profile.php?id=2` to view `user2`'s profile
+2. Access `/lab3-privilege/vulnerable/profile.php?id=2` to view `user2`'s profile
 
 ### Fix
 
@@ -43,12 +44,13 @@ Check that the profile being accessed belongs to the current user.
 
 **Goal:** Access the user list without admin privileges.
 
-- `/lab3-privilege/users.php` — user list with no admin check
+- Vulnerable: `/lab3-privilege/vulnerable/users.php` — user list with no admin check
+- Secure: `/lab3-privilege/fixed/users_secure.php`
 
 ### Attack
 
 1. Login as a regular user
-2. Access `/lab3-privilege/users.php` directly
+2. Access `/lab3-privilege/vulnerable/users.php` directly
 
 ### Fix
 
