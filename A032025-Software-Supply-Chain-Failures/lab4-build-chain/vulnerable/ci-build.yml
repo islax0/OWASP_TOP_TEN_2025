@@ -1,0 +1,24 @@
+name: build-and-release
+
+on: [push]     # every push to any branch runs a build
+
+# ANTI-PATTERNS below are illustrated in comments - see the fixed/ workflow for the cure:
+# permissions: write-all            <- token gets full write (malware-grade)
+# uses: actions/checkout@v4         <- mutable tag, not pinned by SHA
+# run: curl http://...  | bash      <- untrusted fetch as build root
+# push only the floating :latest tag
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout (floating tag - immutability compromised)
+        uses: actions/checkout@v4
+
+      - name: download untrusted build script over http
+        run: curl http://ci-helper.example.acme/bootstrap | bash
+
+      - name: build (mutable tag)
+        run: docker build -t registry.acme.example/invoice-app:latest .
+
+      - name: push
+        run: docker push registry.acme.example/invoice-app:latest

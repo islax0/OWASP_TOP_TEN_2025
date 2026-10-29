@@ -1,0 +1,1488 @@
+{
+    "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:92d5462e-2e69-4ee2-a4e0-74e6d0891ca4",
+    "version": 1,
+    "metadata": {
+        "timestamp": "2026-10-29T09:33:58Z",
+        "tools": [
+            {
+                "name": "composer",
+                "version": "2.8.11"
+            },
+            {
+                "vendor": "cyclonedx",
+                "name": "cyclonedx-php-composer",
+                "version": "v6.2.0",
+                "externalReferences": [
+                    {
+                        "type": "distribution",
+                        "url": "https://api.github.com/repos/CycloneDX/cyclonedx-php-composer/zipball/934440a5ef7c3c3cdb58c3c3d389d412630ccbf6",
+                        "comment": "dist reference: 934440a5ef7c3c3cdb58c3c3d389d412630ccbf6"
+                    },
+                    {
+                        "type": "vcs",
+                        "url": "https://github.com/CycloneDX/cyclonedx-php-composer.git",
+                        "comment": "source reference: 934440a5ef7c3c3cdb58c3c3d389d412630ccbf6"
+                    },
+                    {
+                        "type": "website",
+                        "url": "https://github.com/CycloneDX/cyclonedx-php-composer/#readme",
+                        "comment": "as detected from Composer manifest 'homepage'"
+                    },
+                    {
+                        "type": "issue-tracker",
+                        "url": "https://github.com/CycloneDX/cyclonedx-php-composer/issues",
+                        "comment": "as detected from Composer manifest 'support.issues'"
+                    },
+                    {
+                        "type": "vcs",
+                        "url": "https://github.com/CycloneDX/cyclonedx-php-composer/",
+                        "comment": "as detected from Composer manifest 'support.source'"
+                    }
+                ]
+            },
+            {
+                "vendor": "cyclonedx",
+                "name": "cyclonedx-library",
+                "version": "v4.2.0",
+                "externalReferences": [
+                    {
+                        "type": "distribution",
+                        "url": "https://api.github.com/repos/CycloneDX/cyclonedx-php-library/zipball/a99d940fad1b091fe48f41b6ef1b5960bbb0fbd4",
+                        "comment": "dist reference: a99d940fad1b091fe48f41b6ef1b5960bbb0fbd4"
+                    },
+                    {
+                        "type": "vcs",
+                        "url": "https://github.com/CycloneDX/cyclonedx-php-library.git",
+                        "comment": "source reference: a99d940fad1b091fe48f41b6ef1b5960bbb0fbd4"
+                    },
+                    {
+                        "type": "website",
+                        "url": "https://github.com/CycloneDX/cyclonedx-php-library/#readme",
+                        "comment": "as detected from Composer manifest 'homepage'"
+                    },
+                    {
+                        "type": "documentation",
+                        "url": "https://cyclonedx-php-library.readthedocs.io",
+                        "comment": "as detected from Composer manifest 'support.docs'"
+                    },
+                    {
+                        "type": "issue-tracker",
+                        "url": "https://github.com/CycloneDX/cyclonedx-php-library/issues",
+                        "comment": "as detected from Composer manifest 'support.issues'"
+                    },
+                    {
+                        "type": "vcs",
+                        "url": "https://github.com/CycloneDX/cyclonedx-php-library/",
+                        "comment": "as detected from Composer manifest 'support.source'"
+                    }
+                ]
+            }
+        ],
+        "component": {
+            "bom-ref": "lab/supply-chain-lab2-dev-main",
+            "type": "application",
+            "name": "supply-chain-lab2",
+            "version": "dev-main",
+            "group": "lab",
+            "description": "Lab 2: dependency tree + SBOM generation with CycloneDX",
+            "purl": "pkg:composer/lab/supply-chain-lab2@dev-main",
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "793d7950ec3ffb803a63c20e837b91af5175657f"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "793d7950ec3ffb803a63c20e837b91af5175657f"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        }
+    },
+    "components": [
+        {
+            "bom-ref": "composer/spdx-licenses-1.6.0.0",
+            "type": "library",
+            "name": "spdx-licenses",
+            "version": "1.6.0",
+            "group": "composer",
+            "description": "SPDX licenses list and validation library.",
+            "author": "Nils Adermann, Jordi Boggiano, Rob Bast",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/composer/spdx-licenses@1.6.0",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/5ecd0cb4177696f9fd48f1605dda81db3dee7889",
+                    "comment": "dist reference: 5ecd0cb4177696f9fd48f1605dda81db3dee7889"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/composer/spdx-licenses.git",
+                    "comment": "source reference: 5ecd0cb4177696f9fd48f1605dda81db3dee7889"
+                },
+                {
+                    "type": "chat",
+                    "url": "ircs://irc.libera.chat:6697/composer",
+                    "comment": "as detected from Composer manifest 'support.irc'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/composer/spdx-licenses/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/composer/spdx-licenses/tree/1.6.0",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "5ecd0cb4177696f9fd48f1605dda81db3dee7889"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "5ecd0cb4177696f9fd48f1605dda81db3dee7889"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                },
+                {
+                    "name": "cdx:composer:package:isDevRequirement",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "bom-ref": "cyclonedx/cyclonedx-library-4.2.0.0",
+            "type": "library",
+            "name": "cyclonedx-library",
+            "version": "v4.2.0",
+            "group": "cyclonedx",
+            "description": "Work with CycloneDX documents.",
+            "author": "Jan Kowalleck",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "Apache-2.0"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/cyclonedx/cyclonedx-library@v4.2.0",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/CycloneDX/cyclonedx-php-library/zipball/a99d940fad1b091fe48f41b6ef1b5960bbb0fbd4",
+                    "comment": "dist reference: a99d940fad1b091fe48f41b6ef1b5960bbb0fbd4"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/CycloneDX/cyclonedx-php-library.git",
+                    "comment": "source reference: a99d940fad1b091fe48f41b6ef1b5960bbb0fbd4"
+                },
+                {
+                    "type": "website",
+                    "url": "https://github.com/CycloneDX/cyclonedx-php-library/#readme",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "documentation",
+                    "url": "https://cyclonedx-php-library.readthedocs.io",
+                    "comment": "as detected from Composer manifest 'support.docs'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/CycloneDX/cyclonedx-php-library/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/CycloneDX/cyclonedx-php-library/",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "a99d940fad1b091fe48f41b6ef1b5960bbb0fbd4"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "a99d940fad1b091fe48f41b6ef1b5960bbb0fbd4"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                },
+                {
+                    "name": "cdx:composer:package:isDevRequirement",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "bom-ref": "cyclonedx/cyclonedx-php-composer-6.2.0.0",
+            "type": "library",
+            "name": "cyclonedx-php-composer",
+            "version": "v6.2.0",
+            "group": "cyclonedx",
+            "description": "Creates CycloneDX Software Bill-of-Materials (SBOM) from PHP Composer projects",
+            "author": "Jan Kowalleck",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "Apache-2.0"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/cyclonedx/cyclonedx-php-composer@v6.2.0",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/CycloneDX/cyclonedx-php-composer/zipball/934440a5ef7c3c3cdb58c3c3d389d412630ccbf6",
+                    "comment": "dist reference: 934440a5ef7c3c3cdb58c3c3d389d412630ccbf6"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/CycloneDX/cyclonedx-php-composer.git",
+                    "comment": "source reference: 934440a5ef7c3c3cdb58c3c3d389d412630ccbf6"
+                },
+                {
+                    "type": "website",
+                    "url": "https://github.com/CycloneDX/cyclonedx-php-composer/#readme",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/CycloneDX/cyclonedx-php-composer/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/CycloneDX/cyclonedx-php-composer/",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "934440a5ef7c3c3cdb58c3c3d389d412630ccbf6"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "934440a5ef7c3c3cdb58c3c3d389d412630ccbf6"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "composer-plugin"
+                },
+                {
+                    "name": "cdx:composer:package:isDevRequirement",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "bom-ref": "doctrine/lexer-3.0.3.0",
+            "type": "library",
+            "name": "lexer",
+            "version": "3.0.3",
+            "group": "doctrine",
+            "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
+            "author": "Guilherme Blanco, Roman Borschel, Johannes Schmitt",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/doctrine/lexer@3.0.3",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/doctrine/lexer/zipball/71d305eaa6480d3d3460c7d053d1da7749fa9cca",
+                    "comment": "dist reference: 71d305eaa6480d3d3460c7d053d1da7749fa9cca"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/doctrine/lexer.git",
+                    "comment": "source reference: 71d305eaa6480d3d3460c7d053d1da7749fa9cca"
+                },
+                {
+                    "type": "website",
+                    "url": "https://www.doctrine-project.org/projects/lexer.html",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/doctrine/lexer/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/doctrine/lexer/tree/3.0.3",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "71d305eaa6480d3d3460c7d053d1da7749fa9cca"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "71d305eaa6480d3d3460c7d053d1da7749fa9cca"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "egulias/email-validator-4.0.4.0",
+            "type": "library",
+            "name": "email-validator",
+            "version": "4.0.4",
+            "group": "egulias",
+            "description": "A library for validating emails against several RFCs",
+            "author": "Eduardo Gulias Davis",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/egulias/email-validator@4.0.4",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa",
+                    "comment": "dist reference: d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/egulias/EmailValidator.git",
+                    "comment": "source reference: d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa"
+                },
+                {
+                    "type": "website",
+                    "url": "https://github.com/egulias/EmailValidator",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/egulias/EmailValidator/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/egulias/EmailValidator/tree/4.0.4",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "monolog/monolog-3.12.1.0",
+            "type": "library",
+            "name": "monolog",
+            "version": "3.12.1",
+            "group": "monolog",
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "author": "Jordi Boggiano",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/monolog/monolog@3.12.1",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/Seldaek/monolog/zipball/d7059e4c691d05ea1222b5124bed0f961be46e15",
+                    "comment": "dist reference: d7059e4c691d05ea1222b5124bed0f961be46e15"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/Seldaek/monolog.git",
+                    "comment": "source reference: d7059e4c691d05ea1222b5124bed0f961be46e15"
+                },
+                {
+                    "type": "website",
+                    "url": "https://github.com/Seldaek/monolog",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/Seldaek/monolog/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/Seldaek/monolog/tree/3.12.1",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "d7059e4c691d05ea1222b5124bed0f961be46e15"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "d7059e4c691d05ea1222b5124bed0f961be46e15"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "opis/json-schema-2.6.0.0",
+            "type": "library",
+            "name": "json-schema",
+            "version": "2.6.0",
+            "group": "opis",
+            "description": "Json Schema Validator for PHP",
+            "author": "Sorin Sarca, Marius Sarca",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "Apache-2.0"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/opis/json-schema@2.6.0",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/opis/json-schema/zipball/8458763e0dd0b6baa310e04f1829fc73da4e8c8a",
+                    "comment": "dist reference: 8458763e0dd0b6baa310e04f1829fc73da4e8c8a"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/opis/json-schema.git",
+                    "comment": "source reference: 8458763e0dd0b6baa310e04f1829fc73da4e8c8a"
+                },
+                {
+                    "type": "website",
+                    "url": "https://opis.io/json-schema",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/opis/json-schema/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/opis/json-schema/tree/2.6.0",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "8458763e0dd0b6baa310e04f1829fc73da4e8c8a"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "8458763e0dd0b6baa310e04f1829fc73da4e8c8a"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                },
+                {
+                    "name": "cdx:composer:package:isDevRequirement",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "bom-ref": "opis/string-2.1.0.0",
+            "type": "library",
+            "name": "string",
+            "version": "2.1.0",
+            "group": "opis",
+            "description": "Multibyte strings as objects",
+            "author": "Marius Sarca, Sorin Sarca",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "Apache-2.0"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/opis/string@2.1.0",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/opis/string/zipball/3e4d2aaff518ac518530b89bb26ed40f4503635e",
+                    "comment": "dist reference: 3e4d2aaff518ac518530b89bb26ed40f4503635e"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/opis/string.git",
+                    "comment": "source reference: 3e4d2aaff518ac518530b89bb26ed40f4503635e"
+                },
+                {
+                    "type": "website",
+                    "url": "https://opis.io/string",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/opis/string/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/opis/string/tree/2.1.0",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "3e4d2aaff518ac518530b89bb26ed40f4503635e"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "3e4d2aaff518ac518530b89bb26ed40f4503635e"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                },
+                {
+                    "name": "cdx:composer:package:isDevRequirement",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "bom-ref": "opis/uri-1.1.0.0",
+            "type": "library",
+            "name": "uri",
+            "version": "1.1.0",
+            "group": "opis",
+            "description": "Build, parse and validate URIs and URI-templates",
+            "author": "Marius Sarca, Sorin Sarca",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "Apache-2.0"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/opis/uri@1.1.0",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/opis/uri/zipball/0f3ca49ab1a5e4a6681c286e0b2cc081b93a7d5a",
+                    "comment": "dist reference: 0f3ca49ab1a5e4a6681c286e0b2cc081b93a7d5a"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/opis/uri.git",
+                    "comment": "source reference: 0f3ca49ab1a5e4a6681c286e0b2cc081b93a7d5a"
+                },
+                {
+                    "type": "website",
+                    "url": "https://opis.io",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/opis/uri/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/opis/uri/tree/1.1.0",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "0f3ca49ab1a5e4a6681c286e0b2cc081b93a7d5a"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "0f3ca49ab1a5e4a6681c286e0b2cc081b93a7d5a"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                },
+                {
+                    "name": "cdx:composer:package:isDevRequirement",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "bom-ref": "package-url/packageurl-php-1.1.2.0",
+            "type": "library",
+            "name": "packageurl-php",
+            "version": "1.1.2",
+            "group": "package-url",
+            "description": "Builder and parser based on the package URL (purl) specification.",
+            "author": "Jan Kowalleck",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/package-url/packageurl-php@1.1.2",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/package-url/packageurl-php/zipball/32058ad61f0d8b457fa26e7860bbd8b903196d3f",
+                    "comment": "dist reference: 32058ad61f0d8b457fa26e7860bbd8b903196d3f"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/package-url/packageurl-php.git",
+                    "comment": "source reference: 32058ad61f0d8b457fa26e7860bbd8b903196d3f"
+                },
+                {
+                    "type": "website",
+                    "url": "https://github.com/package-url/packageurl-php#readme",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/package-url/packageurl-php/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/package-url/packageurl-php/tree/1.1.2",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "32058ad61f0d8b457fa26e7860bbd8b903196d3f"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "32058ad61f0d8b457fa26e7860bbd8b903196d3f"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                },
+                {
+                    "name": "cdx:composer:package:isDevRequirement",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "bom-ref": "psr/container-2.0.2.0",
+            "type": "library",
+            "name": "container",
+            "version": "2.0.2",
+            "group": "psr",
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "author": "PHP-FIG",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/psr/container@2.0.2",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                    "comment": "dist reference: c71ecc56dfe541dbd90c5360474fbc405f8d5963"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/php-fig/container.git",
+                    "comment": "source reference: c71ecc56dfe541dbd90c5360474fbc405f8d5963"
+                },
+                {
+                    "type": "website",
+                    "url": "https://github.com/php-fig/container",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/php-fig/container/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/php-fig/container/tree/2.0.2",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "psr/event-dispatcher-1.0.0.0",
+            "type": "library",
+            "name": "event-dispatcher",
+            "version": "1.0.0",
+            "group": "psr",
+            "description": "Standard interfaces for event handling.",
+            "author": "PHP-FIG",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/psr/event-dispatcher@1.0.0",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/php-fig/event-dispatcher/zipball/dbefd12671e8a14ec7f180cab83036ed26714bb0",
+                    "comment": "dist reference: dbefd12671e8a14ec7f180cab83036ed26714bb0"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/php-fig/event-dispatcher.git",
+                    "comment": "source reference: dbefd12671e8a14ec7f180cab83036ed26714bb0"
+                },
+                {
+                    "type": "issue-tracker",
+                    "url": "https://github.com/php-fig/event-dispatcher/issues",
+                    "comment": "as detected from Composer manifest 'support.issues'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/php-fig/event-dispatcher/tree/1.0.0",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "dbefd12671e8a14ec7f180cab83036ed26714bb0"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "dbefd12671e8a14ec7f180cab83036ed26714bb0"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "psr/log-3.0.2.0",
+            "type": "library",
+            "name": "log",
+            "version": "3.0.2",
+            "group": "psr",
+            "description": "Common interface for logging libraries",
+            "author": "PHP-FIG",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/psr/log@3.0.2",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/php-fig/log/zipball/f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+                    "comment": "dist reference: f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/php-fig/log.git",
+                    "comment": "source reference: f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
+                },
+                {
+                    "type": "website",
+                    "url": "https://github.com/php-fig/log",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/php-fig/log/tree/3.0.2",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "symfony/deprecation-contracts-3.7.1.0",
+            "type": "library",
+            "name": "deprecation-contracts",
+            "version": "v3.7.1",
+            "group": "symfony",
+            "description": "A generic function and convention to trigger deprecation notices",
+            "author": "Nicolas Grekas, Symfony Community",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/symfony/deprecation-contracts@v3.7.1",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/f3202fa1b5097b0af062dc978b32ecf63404e31d",
+                    "comment": "dist reference: f3202fa1b5097b0af062dc978b32ecf63404e31d"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/deprecation-contracts.git",
+                    "comment": "source reference: f3202fa1b5097b0af062dc978b32ecf63404e31d"
+                },
+                {
+                    "type": "website",
+                    "url": "https://symfony.com",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/deprecation-contracts/tree/v3.7.1",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "f3202fa1b5097b0af062dc978b32ecf63404e31d"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "f3202fa1b5097b0af062dc978b32ecf63404e31d"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "symfony/event-dispatcher-8.1.5.0",
+            "type": "library",
+            "name": "event-dispatcher",
+            "version": "v8.1.5",
+            "group": "symfony",
+            "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
+            "author": "Fabien Potencier, Symfony Community",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/symfony/event-dispatcher@v8.1.5",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/7458da64220376b2e0dc2d8451bf43382c1ad297",
+                    "comment": "dist reference: 7458da64220376b2e0dc2d8451bf43382c1ad297"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/event-dispatcher.git",
+                    "comment": "source reference: 7458da64220376b2e0dc2d8451bf43382c1ad297"
+                },
+                {
+                    "type": "website",
+                    "url": "https://symfony.com",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/event-dispatcher/tree/v8.1.5",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "7458da64220376b2e0dc2d8451bf43382c1ad297"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "7458da64220376b2e0dc2d8451bf43382c1ad297"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "symfony/event-dispatcher-contracts-3.7.1.0",
+            "type": "library",
+            "name": "event-dispatcher-contracts",
+            "version": "v3.7.1",
+            "group": "symfony",
+            "description": "Generic abstractions related to dispatching event",
+            "author": "Nicolas Grekas, Symfony Community",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/symfony/event-dispatcher-contracts@v3.7.1",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/c7de7a00ffb67842132da02ea92988a39ccd9f4e",
+                    "comment": "dist reference: c7de7a00ffb67842132da02ea92988a39ccd9f4e"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/event-dispatcher-contracts.git",
+                    "comment": "source reference: c7de7a00ffb67842132da02ea92988a39ccd9f4e"
+                },
+                {
+                    "type": "website",
+                    "url": "https://symfony.com",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/event-dispatcher-contracts/tree/v3.7.1",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "c7de7a00ffb67842132da02ea92988a39ccd9f4e"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "c7de7a00ffb67842132da02ea92988a39ccd9f4e"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "symfony/mailer-7.4.22.0",
+            "type": "library",
+            "name": "mailer",
+            "version": "v7.4.22",
+            "group": "symfony",
+            "description": "Helps sending emails",
+            "author": "Fabien Potencier, Symfony Community",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/symfony/mailer@v7.4.22",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/symfony/mailer/zipball/1aa1e2ee7515826bb17b0ad0d2f16962fcaa7859",
+                    "comment": "dist reference: 1aa1e2ee7515826bb17b0ad0d2f16962fcaa7859"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/mailer.git",
+                    "comment": "source reference: 1aa1e2ee7515826bb17b0ad0d2f16962fcaa7859"
+                },
+                {
+                    "type": "website",
+                    "url": "https://symfony.com",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/mailer/tree/v7.4.22",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "1aa1e2ee7515826bb17b0ad0d2f16962fcaa7859"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "1aa1e2ee7515826bb17b0ad0d2f16962fcaa7859"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "symfony/mime-8.1.10.0",
+            "type": "library",
+            "name": "mime",
+            "version": "v8.1.10",
+            "group": "symfony",
+            "description": "Allows manipulating MIME messages",
+            "author": "Fabien Potencier, Symfony Community",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/symfony/mime@v8.1.10",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/symfony/mime/zipball/8d1232052c9cdef170ed9608b3147bca4f61ff69",
+                    "comment": "dist reference: 8d1232052c9cdef170ed9608b3147bca4f61ff69"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/mime.git",
+                    "comment": "source reference: 8d1232052c9cdef170ed9608b3147bca4f61ff69"
+                },
+                {
+                    "type": "website",
+                    "url": "https://symfony.com",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/mime/tree/v8.1.10",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "8d1232052c9cdef170ed9608b3147bca4f61ff69"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "8d1232052c9cdef170ed9608b3147bca4f61ff69"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "symfony/polyfill-intl-idn-1.43.0.0",
+            "type": "library",
+            "name": "polyfill-intl-idn",
+            "version": "v1.43.0",
+            "group": "symfony",
+            "description": "Symfony polyfill for intl's idn_to_ascii and idn_to_utf8 functions",
+            "author": "Laurent Bassin, Trevor Rowbotham, Symfony Community",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/symfony/polyfill-intl-idn@v1.43.0",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/533d68cf99c8f8ee2e8893c59ed59192e92cfd74",
+                    "comment": "dist reference: 533d68cf99c8f8ee2e8893c59ed59192e92cfd74"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/polyfill-intl-idn.git",
+                    "comment": "source reference: 533d68cf99c8f8ee2e8893c59ed59192e92cfd74"
+                },
+                {
+                    "type": "website",
+                    "url": "https://symfony.com",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/polyfill-intl-idn/tree/v1.43.0",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "533d68cf99c8f8ee2e8893c59ed59192e92cfd74"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "533d68cf99c8f8ee2e8893c59ed59192e92cfd74"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "symfony/polyfill-intl-normalizer-1.43.0.0",
+            "type": "library",
+            "name": "polyfill-intl-normalizer",
+            "version": "v1.43.0",
+            "group": "symfony",
+            "description": "Symfony polyfill for intl's Normalizer class and related functions",
+            "author": "Nicolas Grekas, Symfony Community",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/symfony/polyfill-intl-normalizer@v1.43.0",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/ebd57ccc7edb93d632e184efbe7693d2517bab3b",
+                    "comment": "dist reference: ebd57ccc7edb93d632e184efbe7693d2517bab3b"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
+                    "comment": "source reference: ebd57ccc7edb93d632e184efbe7693d2517bab3b"
+                },
+                {
+                    "type": "website",
+                    "url": "https://symfony.com",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.43.0",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "ebd57ccc7edb93d632e184efbe7693d2517bab3b"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "ebd57ccc7edb93d632e184efbe7693d2517bab3b"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "symfony/polyfill-mbstring-1.43.3.0",
+            "type": "library",
+            "name": "polyfill-mbstring",
+            "version": "v1.43.3",
+            "group": "symfony",
+            "description": "Symfony polyfill for the Mbstring extension",
+            "author": "Nicolas Grekas, Symfony Community",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/symfony/polyfill-mbstring@v1.43.3",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/122889ed24dc000165bcbfd77ec412f15cbdfc6a",
+                    "comment": "dist reference: 122889ed24dc000165bcbfd77ec412f15cbdfc6a"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/polyfill-mbstring.git",
+                    "comment": "source reference: 122889ed24dc000165bcbfd77ec412f15cbdfc6a"
+                },
+                {
+                    "type": "website",
+                    "url": "https://symfony.com",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/polyfill-mbstring/tree/v1.43.3",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "122889ed24dc000165bcbfd77ec412f15cbdfc6a"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "122889ed24dc000165bcbfd77ec412f15cbdfc6a"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        },
+        {
+            "bom-ref": "symfony/service-contracts-3.7.3.0",
+            "type": "library",
+            "name": "service-contracts",
+            "version": "v3.7.3",
+            "group": "symfony",
+            "description": "Generic abstractions related to writing services",
+            "author": "Nicolas Grekas, Symfony Community",
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ],
+            "purl": "pkg:composer/symfony/service-contracts@v3.7.3",
+            "externalReferences": [
+                {
+                    "type": "distribution",
+                    "url": "https://api.github.com/repos/symfony/service-contracts/zipball/15e6a07ec2a2c75ceb1b21dd98105ee8456d2257",
+                    "comment": "dist reference: 15e6a07ec2a2c75ceb1b21dd98105ee8456d2257"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/service-contracts.git",
+                    "comment": "source reference: 15e6a07ec2a2c75ceb1b21dd98105ee8456d2257"
+                },
+                {
+                    "type": "website",
+                    "url": "https://symfony.com",
+                    "comment": "as detected from Composer manifest 'homepage'"
+                },
+                {
+                    "type": "vcs",
+                    "url": "https://github.com/symfony/service-contracts/tree/v3.7.3",
+                    "comment": "as detected from Composer manifest 'support.source'"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "cdx:composer:package:distReference",
+                    "value": "15e6a07ec2a2c75ceb1b21dd98105ee8456d2257"
+                },
+                {
+                    "name": "cdx:composer:package:sourceReference",
+                    "value": "15e6a07ec2a2c75ceb1b21dd98105ee8456d2257"
+                },
+                {
+                    "name": "cdx:composer:package:type",
+                    "value": "library"
+                }
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "ref": "composer/spdx-licenses-1.6.0.0"
+        },
+        {
+            "ref": "cyclonedx/cyclonedx-library-4.2.0.0",
+            "dependsOn": [
+                "opis/json-schema-2.6.0.0"
+            ]
+        },
+        {
+            "ref": "cyclonedx/cyclonedx-php-composer-6.2.0.0",
+            "dependsOn": [
+                "composer/spdx-licenses-1.6.0.0",
+                "cyclonedx/cyclonedx-library-4.2.0.0",
+                "package-url/packageurl-php-1.1.2.0"
+            ]
+        },
+        {
+            "ref": "doctrine/lexer-3.0.3.0"
+        },
+        {
+            "ref": "egulias/email-validator-4.0.4.0",
+            "dependsOn": [
+                "doctrine/lexer-3.0.3.0",
+                "symfony/polyfill-intl-idn-1.43.0.0"
+            ]
+        },
+        {
+            "ref": "monolog/monolog-3.12.1.0",
+            "dependsOn": [
+                "psr/log-3.0.2.0"
+            ]
+        },
+        {
+            "ref": "opis/json-schema-2.6.0.0",
+            "dependsOn": [
+                "opis/string-2.1.0.0",
+                "opis/uri-1.1.0.0"
+            ]
+        },
+        {
+            "ref": "opis/string-2.1.0.0"
+        },
+        {
+            "ref": "opis/uri-1.1.0.0",
+            "dependsOn": [
+                "opis/string-2.1.0.0"
+            ]
+        },
+        {
+            "ref": "package-url/packageurl-php-1.1.2.0"
+        },
+        {
+            "ref": "psr/container-2.0.2.0"
+        },
+        {
+            "ref": "psr/event-dispatcher-1.0.0.0"
+        },
+        {
+            "ref": "psr/log-3.0.2.0"
+        },
+        {
+            "ref": "symfony/deprecation-contracts-3.7.1.0"
+        },
+        {
+            "ref": "symfony/event-dispatcher-8.1.5.0",
+            "dependsOn": [
+                "symfony/deprecation-contracts-3.7.1.0",
+                "symfony/event-dispatcher-contracts-3.7.1.0"
+            ]
+        },
+        {
+            "ref": "symfony/event-dispatcher-contracts-3.7.1.0",
+            "dependsOn": [
+                "psr/event-dispatcher-1.0.0.0"
+            ]
+        },
+        {
+            "ref": "symfony/mailer-7.4.22.0",
+            "dependsOn": [
+                "egulias/email-validator-4.0.4.0",
+                "psr/event-dispatcher-1.0.0.0",
+                "psr/log-3.0.2.0",
+                "symfony/event-dispatcher-8.1.5.0",
+                "symfony/mime-8.1.10.0",
+                "symfony/service-contracts-3.7.3.0"
+            ]
+        },
+        {
+            "ref": "symfony/mime-8.1.10.0",
+            "dependsOn": [
+                "symfony/polyfill-intl-idn-1.43.0.0",
+                "symfony/polyfill-mbstring-1.43.3.0"
+            ]
+        },
+        {
+            "ref": "symfony/polyfill-intl-idn-1.43.0.0",
+            "dependsOn": [
+                "symfony/polyfill-intl-normalizer-1.43.0.0"
+            ]
+        },
+        {
+            "ref": "symfony/polyfill-intl-normalizer-1.43.0.0"
+        },
+        {
+            "ref": "symfony/polyfill-mbstring-1.43.3.0"
+        },
+        {
+            "ref": "symfony/service-contracts-3.7.3.0",
+            "dependsOn": [
+                "psr/container-2.0.2.0",
+                "symfony/deprecation-contracts-3.7.1.0"
+            ]
+        },
+        {
+            "ref": "lab/supply-chain-lab2-dev-main",
+            "dependsOn": [
+                "symfony/mailer-7.4.22.0",
+                "monolog/monolog-3.12.1.0",
+                "cyclonedx/cyclonedx-php-composer-6.2.0.0"
+            ]
+        }
+    ]
+}

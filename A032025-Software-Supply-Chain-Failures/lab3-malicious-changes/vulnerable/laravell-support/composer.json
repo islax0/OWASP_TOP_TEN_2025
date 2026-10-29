@@ -1,0 +1,13 @@
+{
+    "name": "laravell/support",
+    "description": "Shared support utilities for the Laravel ecosystem (maintained by community)",
+    "type": "library",
+    "require": {
+        "php": ">=8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravellSupport\\": "src/"
+        }
+    }
+}

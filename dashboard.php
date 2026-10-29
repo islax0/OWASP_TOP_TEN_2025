@@ -116,6 +116,47 @@ $categories = [
             ],
         ],
     ],
+    [
+        'title' => 'A03:2025 — Software Supply Chain Failures',
+        'labs' => [
+            [
+                'name' => 'Lab 1 — Detecting Vulnerable Libraries',
+                'desc' => 'Old dependencies with known CVEs + an abandoned package. Detect with composer audit (npm audit equivalent), local-php-security-checker, OWASP Dependency-Check (Docker).',
+                'vuln' => 'A032025-Software-Supply-Chain-Failures/lab1-vulnerable-deps/vulnerable/composer.lock',
+                'vuln_label' => 'Vulnerable: composer.lock (6 CVEs)',
+                'secure' => 'A032025-Software-Supply-Chain-Failures/lab1-vulnerable-deps/fixed/composer.lock',
+                'secure_label' => 'Secure: patched lockfile (0 CVEs)',
+                'doc' => 'A032025-Software-Supply-Chain-Failures/lab1-vulnerable-deps/README.md',
+            ],
+            [
+                'name' => 'Lab 2 — Dependency Tree & SBOM',
+                'desc' => 'Direct vs transitive dependencies. Trace with composer show -t / composer why, export a CycloneDX SBOM (components, versions, purls, dist hashes).',
+                'vuln' => 'A032025-Software-Supply-Chain-Failures/lab2-sbom/app/composer.json',
+                'vuln_label' => 'App: 2 direct dependencies',
+                'secure' => 'A032025-Software-Supply-Chain-Failures/lab2-sbom/app/sbom.cdx.json',
+                'secure_label' => 'SBOM: 22 components exported',
+                'doc' => 'A032025-Software-Supply-Chain-Failures/lab2-sbom/README.md',
+            ],
+            [
+                'name' => 'Lab 3 — Detecting Malicious Changes',
+                'desc' => 'Malicious PR: post-install-cmd harvesting env (Shai-Hulud style), typo-squat laravell/support, path repo bypass. Guard with composer-guard.php, hooks, branch protection.',
+                'vuln' => 'A032025-Software-Supply-Chain-Failures/lab3-malicious-changes/vulnerable/pr.diff',
+                'vuln_label' => 'Vulnerable: malicious pr.diff',
+                'secure' => 'A032025-Software-Supply-Chain-Failures/lab3-malicious-changes/fixed/composer-guard.php',
+                'secure_label' => 'Secure: composer guard + hook',
+                'doc' => 'A032025-Software-Supply-Chain-Failures/lab3-malicious-changes/README.md',
+            ],
+            [
+                'name' => 'Lab 4 — Securing the Build Chain',
+                'desc' => 'Docker build chain failures: curl|bash, tarballs without checksum, composer scripts at build, secrets baked in, mutable :latest tags.',
+                'vuln' => 'A032025-Software-Supply-Chain-Failures/lab4-build-chain/vulnerable/Dockerfile',
+                'vuln_label' => 'Vulnerable: Dockerfile + CI',
+                'secure' => 'A032025-Software-Supply-Chain-Failures/lab4-build-chain/fixed/Dockerfile',
+                'secure_label' => 'Secure: pinned + attested build',
+                'doc' => 'A032025-Software-Supply-Chain-Failures/lab4-build-chain/README.md',
+            ],
+        ],
+    ],
 ];
 ?>
 <!DOCTYPE html>
@@ -148,6 +189,8 @@ $categories = [
         .links a.vuln-link:hover { background: #991b1b; }
         .links a.secure-link { background: #14532d; color: #bbf7d0; }
         .links a.secure-link:hover { background: #166534; }
+        .links a.doc-link { background: #1e293b; border: 1px solid #475569; color: #93c5fd; }
+        .links a.doc-link:hover { border-color: #3b82f6; color: #bfdbfe; }
         .badge { display: inline-block; padding: .2rem .5rem; border-radius: 4px; font-size: .7rem; font-weight: 600; text-transform: uppercase; }
         .badge-admin { background: #7f1d1d; color: #fecaca; }
         .badge-user { background: #1e3a5f; color: #93c5fd; }
@@ -179,6 +222,9 @@ $categories = [
                             <div class="links">
                                 <a class="vuln-link" href="<?= htmlspecialchars($lab['vuln']) ?>"><?= htmlspecialchars($lab['vuln_label']) ?></a>
                                 <a class="secure-link" href="<?= htmlspecialchars($lab['secure']) ?>"><?= htmlspecialchars($lab['secure_label']) ?></a>
+                                <?php if (!empty($lab['doc'])): ?>
+                                    <a class="doc-link" href="<?= htmlspecialchars($lab['doc']) ?>">Guide: lab README</a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach; ?>

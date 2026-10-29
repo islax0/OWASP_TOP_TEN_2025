@@ -1,0 +1,25 @@
+name: Audit dependencies (weekly + on lockfile change)
+
+on:
+  workflow_call:
+  schedule:
+    - cron: "0 6 * * 1" # every Monday 6AM UTC
+  pull_request:
+    paths:
+      - "composer.json"
+      - "composer.lock"
+
+permissions:
+  contents: read # least privilege - token can only read code
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2 (pinned by SHA)
+
+      - name: Fail on any advisory
+        run: composer audit --locked --no-interaction
+
+      - name: Fail on abandoned packages
+        run: composer audit --abandoned=fail --locked --no-interaction

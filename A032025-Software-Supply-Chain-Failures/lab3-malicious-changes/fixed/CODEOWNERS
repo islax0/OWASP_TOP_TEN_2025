@@ -1,0 +1,6 @@
+# composer changes always need the security lead
+/composer.json    @security-lead
+/composer.lock    @security-lead
+/scripts/         @security-lead
+# CI definitions are part of the supply chain too
+/.github/workflows/ @security-lead

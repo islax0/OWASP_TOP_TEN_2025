@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: composer
+    directory: "/"
+    schedule:
+      interval: weekly
+    # only PRs that move to non-vulnerable versions; audit gate will verify
+    open-pull-requests-limit: 5
+    reviewers:
+      - security-lead
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]

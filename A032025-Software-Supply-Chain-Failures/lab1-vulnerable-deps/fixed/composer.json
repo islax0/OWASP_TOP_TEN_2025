@@ -1,0 +1,11 @@
+{
+    "name": "lab/supply-chain-lab1",
+    "description": "Lab 1 (fixed): patched, maintained dependencies + periodic audits",
+    "require": {
+        "php": ">=8.2",
+        "phpmailer/phpmailer": "^6.12",
+        "symfony/mailer": "^7.2",
+        "firebase/php-jwt": "^7.2",
+        "league/csv": "^9.15"
+    }
+}

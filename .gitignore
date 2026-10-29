@@ -1,3 +1,6 @@
+# Composer vendor dirs are regenerable from composer.lock
+**/vendor/
+
 # Database files
 database.sqlite
 

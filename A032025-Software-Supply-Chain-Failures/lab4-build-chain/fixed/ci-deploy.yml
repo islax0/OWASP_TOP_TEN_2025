@@ -1,0 +1,53 @@
+name: build-and-release
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+
+permissions:
+  contents: read              # GITHUB_TOKEN: read-only by default, elevate per job
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write         # needs registry push only
+    id-token: write           # enables keyless provenance/signing (SLSA-style)
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2 pinned by SHA
+
+      # no curl|bash - tools come from pinned official images
+      - name: Build (BuildKit provenance + SBOM attestation)
+        run: |
+          docker buildx build \
+            --provenance=true --sbom=true \
+            --metadata-file build-metadata.json \
+            -t registry.acme.example/invoice-app:${{ github.sha }} \
+            --output type=registry,oci-mediatypes=true .
+          echo "Digest of the immutable artifact:"
+          cat build-metadata.json
+
+      - name: Vulnerability scan the built artifact
+        run: docker scout cves registry.acme.example/invoice-app@$(cat build-metadata.json | jq -r '.imageconfig.digest') --exit-code
+
+      # Sign with Sigstore cosign (keyless, OIDC) so deploys can verify origin
+      - name: Sign the digest
+        run: cosign sign --yes registry.acme.example/invoice-app@$(cat build-metadata.json | jq -r '.containerimage.digest')
+
+  deploy:
+    needs: build
+    environment: production   # manual approval gate staged rollout
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      # same artifact is PROMOTED - it is never rebuilt per environment (A03 immutability rule)
+      - name: Verify signature before running anything
+        run: cosign verify --certificate-identity-regexp '^https://github.com/acme/' \
+             --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+             registry.acme.example/invoice-app@$(cat build-metadata.json | jq -r '.containerimage.digest')
+
+      - name: Verify checksums of release bundle
+        run: php verify-artifact.php

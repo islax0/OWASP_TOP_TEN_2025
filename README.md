@@ -6,6 +6,7 @@ Hands-on labs covering the OWASP Top Ten 2025 security vulnerabilities.
 
 - [A01: Broken Access Control](A012025-Broken-Access-Control/README.md) - Labs for access control vulnerabilities
 - [A02: Security Misconfiguration](A022025-Security-Misconfiguration/README.md) - Labs for misconfiguration vulnerabilities
+- [A03: Software Supply Chain Failures](A032025-Software-Supply-Chain-Failures/README.md) - Labs for supply chain failures (PHP 8.4 + Composer 2.8: composer audit, SBOM/CycloneDX, malicious-PR detection, Docker/CI hardening)
 
 ## Setup
 
@@ -29,3 +30,7 @@ If the app is not at the web root, edit `BASE_URL` in `config.php`.
 ## Reset database
 
 Visit `init.php` again anytime to wipe and re-seed.
+
+## A03 note
+
+Supply chain labs are CLI/tooling labs: they don't need the login app, but they need **Composer ≥ 2.7** on PATH. Run each lab via its own README (`A032025-Software-Supply-Chain-Failures/labN-.../README.md`).
