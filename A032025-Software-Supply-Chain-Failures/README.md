@@ -1,16 +1,16 @@
 # A03: Software Supply Chain Failures Labs
 
-Hands-on labs covering OWASP Top 10:2025 **A03 — Software Supply Chain Failures** (السلسلة البديلة للبرمجيات / فشل سلسلة البرمجيات).
+Hands-on labs covering OWASP Top 10:2025 **A03 — Software Supply Chain Failures**.
 Stack for these labs: **PHP 8.4 + Composer 2.8 + Git + Docker** (equivalents of the npm/npm-audit/node world).
 
-## Labs (خريطة اللابات)
+## Labs
 
-| # | Lab | Arabic | Tools used |
-|---|-----|--------|------------|
-| 1 | [Detecting Vulnerable Libraries](lab1-vulnerable-deps/README.md) | اكتشاف المكتبات الضعيفة | `composer audit`, local-php-security-checker, OWASP Dependency-Check (Docker) |
-| 2 | [Dependency Tree & SBOM](lab2-sbom/README.md) | تتبع التبعيات وSBOM | `composer show -t`, `composer why`, CycloneDX `make-sbom` |
-| 3 | [Detecting Malicious Changes](lab3-malicious-changes/README.md) | اكتشاف التغييرات الخبيثة | git hooks / PR diff review, `composer-guard.php`, branch protection, dependabot |
-| 4 | [Securing the Build Chain](lab4-build-chain/README.md) | تأمين سلسلة بناء البرنامج | Docker pinning by digest, buildx provenance, SBOM attestation, cosign |
+| # | Lab | Tools used |
+|---|-----|------------|
+| 1 | [Detecting Vulnerable Libraries](lab1-vulnerable-deps/README.md) | `composer audit`, local-php-security-checker, OWASP Dependency-Check (Docker) |
+| 2 | [Dependency Tree & SBOM](lab2-sbom/README.md) | `composer show -t`, `composer why`, CycloneDX `make-sbom` |
+| 3 | [Detecting Malicious Changes](lab3-malicious-changes/README.md) | git hooks / PR diff review, `composer-guard.php`, branch protection, dependabot |
+| 4 | [Securing the Build Chain](lab4-build-chain/README.md) | Docker pinning by digest, buildx provenance, SBOM attestation, cosign |
 
 ## What A03 covers (mapped to the labs)
 
